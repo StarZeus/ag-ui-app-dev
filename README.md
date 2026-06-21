@@ -204,3 +204,16 @@ If you encounter Python import errors:
 ```bash
 npm run install:agent
 ```
+
+## CopilotKit Intelligence
+
+This app is connected to the CopilotKit Intelligence project **ag-ui-app**
+(recorded in `.copilotkit/project.json`). Intelligence adds durable threads,
+message & event persistence, and analytics for your agent.
+
+- **License:** a token is stored as `COPILOTKIT_LICENSE_TOKEN` in your `.env`.
+- **Switch project:** run `copilotkit project select` from this directory.
+- **Run it:** follow "Getting Started" above — install dependencies, set your
+  keys in `.env`, then `npm run dev`.
+
+Learn more at https://docs.copilotkit.ai.
