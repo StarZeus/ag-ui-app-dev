@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@ag-ui/client':
+        specifier: ^0.0.57
+        version: 0.0.57
+      '@ag-ui/core':
+        specifier: ^0.0.57
+        version: 0.0.57
       '@copilotkit/a2ui-renderer':
         specifier: 1.61.0
         version: 1.61.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
