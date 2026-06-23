@@ -45,7 +45,27 @@ Local endpoints:
 - UI: `http://localhost:3000`
 - LangGraph dev server: `http://localhost:8123`
 
-The development image copies the repository at build time. Rebuild after source, dependency, or agent changes.
+The development image copies the repository at build time. Rebuild after source, dependency, or agent changes unless you use the live-edit workflow below.
+
+## Live Source Editing
+
+For local development, bind mount the repository into `/app` so edits on your machine are visible inside the container:
+
+```bash
+docker run --rm \
+  --name ag-ui-app-dev \
+  --env-file .env \
+  -p 3000:3000 \
+  -p 8123:8123 \
+  -v "$PWD:/app" \
+  -v /app/node_modules \
+  -v /opt/venv \
+  ag-ui-app-dev
+```
+
+Edit files normally on the host, such as `src/`, `agent/`, and `scripts/`. Next.js should reload UI changes automatically. Restart the container if agent changes do not reload cleanly.
+
+The anonymous `/app/node_modules` and `/opt/venv` volumes preserve dependencies installed in the image; without them, the host mount can hide container dependencies.
 
 ## Production / Deployment Image
 
