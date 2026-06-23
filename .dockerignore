@@ -1,0 +1,11 @@
+.git/
+.next/
+.worktrees/
+node_modules/
+agent/.venv/
+agent/.langgraph_api/
+**/__pycache__/
+*.log
+.env
+.env.*
+!.env.example
