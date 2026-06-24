@@ -13,10 +13,13 @@ from src.todos import AgentState, todo_tools
 # A2UI tools
 from src.a2ui_dynamic_schema import generate_a2ui
 from src.a2ui_fixed_schema import search_flights
+from src.openai_config import build_chat_openai_kwargs
 
 from langchain_openai import ChatOpenAI
 
-model = ChatOpenAI(model="gpt-5.4-mini", model_kwargs={"parallel_tool_calls": False})
+model = ChatOpenAI(
+    **build_chat_openai_kwargs(model_kwargs={"parallel_tool_calls": False})
+)
 
 agent = create_agent(
     model=model,

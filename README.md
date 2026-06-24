@@ -46,6 +46,8 @@ Then edit the `.env` file and add your OpenAI API key:
 
 ```bash
 OPENAI_API_KEY=your-openai-api-key-here
+OPENAI_BASE_URL=https://api.openai.com/v1
+OPENAI_MODEL=gpt-5.4-mini
 ```
 
 3. Start the development server:

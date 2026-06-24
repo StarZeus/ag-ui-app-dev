@@ -17,6 +17,7 @@ from langchain_core.tools import tool as lc_tool
 from langchain_openai import ChatOpenAI
 
 from copilotkit import a2ui
+from src.openai_config import build_chat_openai_kwargs
 
 CUSTOM_CATALOG_ID = "copilotkit://app-dashboard-catalog"
 
@@ -69,7 +70,7 @@ def generate_a2ui(runtime: ToolRuntime[Any]) -> str:
 
     prompt = context_text
 
-    model = ChatOpenAI(model="gpt-4.1")
+    model = ChatOpenAI(**build_chat_openai_kwargs(default_model="gpt-4.1"))
     model_with_tool = model.bind_tools(
         [render_a2ui],
         tool_choice="render_a2ui",

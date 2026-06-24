@@ -10,7 +10,7 @@ This directory contains Dockerfiles for running the CopilotKit + LangGraph app i
 
 ```bash
 cp .env.example .env
-# edit .env and set OPENAI_API_KEY
+# edit .env and set OPENAI_API_KEY, OPENAI_BASE_URL, and OPENAI_MODEL
 ```
 
 Do not bake `.env` files into images. Pass secrets at runtime with `--env-file`, an orchestrator secret store, or CI/CD variables.
